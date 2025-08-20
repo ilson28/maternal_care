@@ -35,7 +35,7 @@ class Welcome extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 11,
           ),
           Image.asset(
             "assets/images/rectangle.png",
