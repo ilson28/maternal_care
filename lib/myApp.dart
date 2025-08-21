@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maternalcare/screens/profile.dart';
 
 import 'package:maternalcare/screens/welcome.dart';
 import 'package:maternalcare/widgets/login_signup.dart';
@@ -18,11 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // A widget which will be started on application startup
-      home: Scaffold(
-        body: LoginSignup(
-          type: "create",
-        ),
-      ),
+      home: Scaffold(body: Profile()),
     );
   }
 }

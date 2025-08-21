@@ -43,7 +43,6 @@ class _LoginState extends State<LoginSignup> {
                           isActive: selectedIndex == 0,
                           onTap: () => setState(() => selectedIndex = 0),
                         ),
-                        SizedBox(width: 0),
                         AuthButton(
                           text: "Sign up",
                           isActive: selectedIndex == 1,
@@ -105,7 +104,7 @@ class _LoginState extends State<LoginSignup> {
                         style: TextStyle(color: Colors.white),
                       )),
                   SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   if (widget.type == "login".toLowerCase())
                     Text(
