@@ -6,11 +6,7 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xffF8C9C9), Color(0xffffffff)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter)),
+      decoration: AppColors.backgroundApp,
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.only(top: 113, bottom: 15),
