@@ -44,7 +44,9 @@ class Welcome extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 60, bottom: 40),
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/login');
+                        },
                         style: ButtonStyle(
                             backgroundColor:
                                 WidgetStatePropertyAll(AppColors.primary)),

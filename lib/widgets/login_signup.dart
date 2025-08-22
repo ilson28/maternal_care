@@ -39,15 +39,20 @@ class _LoginState extends State<LoginSignup> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         AuthButton(
-                          text: "Log in",
-                          isActive: selectedIndex == 0,
-                          onTap: () => setState(() => selectedIndex = 0),
-                        ),
+                            text: "Log in",
+                            isActive: selectedIndex == 0,
+                            onTap: () {
+                              Navigator.pushReplacementNamed(context, '/login');
+                              // setState(() => selectedIndex = 1),
+                            }),
                         AuthButton(
-                          text: "Sign up",
-                          isActive: selectedIndex == 1,
-                          onTap: () => setState(() => selectedIndex = 1),
-                        ),
+                            text: "Sign up",
+                            isActive: selectedIndex == 1,
+                            onTap: () {
+                              Navigator.pushReplacementNamed(
+                                  context, '/signup');
+                              // setState(() => selectedIndex = 1),
+                            }),
                       ],
                     ),
                   ),
@@ -93,7 +98,9 @@ class _LoginState extends State<LoginSignup> {
                     height: 28,
                   ),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, "/profile");
+                      },
                       style: ButtonStyle(
                           backgroundColor:
                               WidgetStatePropertyAll(Color(0xaaC4007C))),
