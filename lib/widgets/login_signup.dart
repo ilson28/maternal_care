@@ -10,7 +10,8 @@ class LoginSignup extends StatefulWidget {
 
 class _LoginState extends State<LoginSignup> {
   List<bool> isSelected = [true, false];
-  int selectedIndex = 0; // 0 = Log in, 1 = Sign up
+  late int selectedIndex =
+      widget.type == 'login' ? 0 : 1; // 0 = Log in, 1 = Sign up
   @override
   Widget build(BuildContext context) {
     return Container(
