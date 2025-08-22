@@ -17,8 +17,7 @@ class _LoginState extends State<LoginSignup> {
       decoration: AppColors.backgroundApp,
       width: double.infinity,
       child: Padding(
-        padding:
-            const EdgeInsets.only(top: 30, bottom: 50, left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
         child: Column(children: [
           Image.asset("assets/images/women.png", width: 150),
           Transform.translate(

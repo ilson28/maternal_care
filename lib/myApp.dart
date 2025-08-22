@@ -3,6 +3,7 @@ import 'package:maternalcare/screens/profile.dart';
 
 import 'package:maternalcare/screens/welcome.dart';
 import 'package:maternalcare/widgets/login_signup.dart';
+import 'package:maternalcare/widgets/menu.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -19,7 +20,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // A widget which will be started on application startup
-      home: Scaffold(body: Profile()),
+      home: Scaffold(
+          body: LoginSignup(
+        type: "crear",
+      )),
     );
   }
 }
