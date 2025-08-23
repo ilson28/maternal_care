@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:maternalcare/screens/login.dart';
 import 'package:maternalcare/screens/profile.dart';

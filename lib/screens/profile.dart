@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maternalcare/utils/appColors.dart';
+import 'package:maternalcare/widgets/menu.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -12,18 +13,19 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: Menu(),
+        appBar: AppBar(
+          backgroundColor: Color(0xffF8C9C9),
+        ),
         body: Container(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           width: double.infinity,
           decoration: AppColors.backgroundApp,
           child: Column(children: [
-            Row(
-              children: [
-                Icon(Icons.menu),
-              ],
-            ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 18,
+              ),
               child: Container(
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(vertical: 23, horizontal: 20),
