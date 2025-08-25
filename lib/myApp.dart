@@ -7,6 +7,7 @@ import 'package:maternalcare/screens/userProgress.dart';
 import 'package:maternalcare/screens/welcome.dart';
 import 'package:maternalcare/widgets/login_signup.dart';
 import 'package:maternalcare/widgets/menu.dart';
+import 'package:maternalcare/widgets/questions.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
