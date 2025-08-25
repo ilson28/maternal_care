@@ -122,7 +122,10 @@ class _ProfileState extends State<Profile> {
                     ),
                     SizedBox(height: 30),
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(
+                              context, '/user-progress');
+                        },
                         style: ButtonStyle(
                             padding: WidgetStatePropertyAll(
                                 EdgeInsets.symmetric(
