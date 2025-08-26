@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:maternalcare/screens/login.dart';
 import 'package:maternalcare/screens/profile.dart';
+import 'package:maternalcare/screens/question_1.dart';
+import 'package:maternalcare/screens/question_2.dart';
+import 'package:maternalcare/screens/question_3.dart';
+import 'package:maternalcare/screens/question_4.dart';
+import 'package:maternalcare/screens/question_5.dart';
 import 'package:maternalcare/screens/signup.dart';
 import 'package:maternalcare/screens/userProgress.dart';
 
@@ -29,10 +34,15 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => const Welcome(),
-        "/user-progress": (context) => const UserProgress(),
         "/login": (context) => const Login(),
         "/signup": (context) => const Signup(),
         "/profile": (context) => const Profile(),
+        "/user-progress": (context) => const UserProgress(),
+        "/question_1": (context) => const Question_1(),
+        "/question_2": (context) => const Question_2(),
+        "/question_3": (context) => const Question_3(),
+        "/question_4": (context) => const Question_4(),
+        "/question_5": (context) => const Question_5(),
       },
     );
   }
