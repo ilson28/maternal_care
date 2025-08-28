@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:maternalcare/utils/appColors.dart';
 
 class WhiteBox extends StatelessWidget {
@@ -14,7 +15,7 @@ class WhiteBox extends StatelessWidget {
             children: [
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(top: 18),
                   child: Text("Biblioteca",
                       style: TextStyle(
                           color: AppColors.primary,
@@ -23,7 +24,6 @@ class WhiteBox extends StatelessWidget {
                 ),
               ),
               Container(
-                color: Colors.white,
                 margin: const EdgeInsets.all(16),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -151,6 +151,21 @@ class WhiteBox extends StatelessWidget {
                   ],
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30, right: 16),
+                    child: Text(
+                      "Volver",
+                      style: GoogleFonts.inder(
+                        color: AppColors.primary,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
