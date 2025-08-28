@@ -9,11 +9,13 @@ import 'package:maternalcare/screens/question_4.dart';
 import 'package:maternalcare/screens/question_5.dart';
 import 'package:maternalcare/screens/signup.dart';
 import 'package:maternalcare/screens/userProgress.dart';
+import 'package:maternalcare/screens/videosSection.dart';
 
 import 'package:maternalcare/screens/welcome.dart';
 import 'package:maternalcare/widgets/login_signup.dart';
 import 'package:maternalcare/widgets/menu.dart';
 import 'package:maternalcare/widgets/questions.dart';
+import 'package:maternalcare/widgets/whiteBox.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -35,11 +37,13 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         // "/": (context) => const Welcome(),
+        "/": (context) => const WhiteBox(),
         "/login": (context) => const Login(),
         "/signup": (context) => const Signup(),
         "/profile": (context) => const Profile(),
         "/user-progress": (context) => const UserProgress(),
-        "/": (context) => const CongratsScreen(),
+        "/congrats": (context) => const CongratsScreen(),
+        "/library": (context) => const VideosSection(),
         "/question_1": (context) => const Question_1(),
         "/question_2": (context) => const Question_2(),
         "/question_3": (context) => const Question_3(),
