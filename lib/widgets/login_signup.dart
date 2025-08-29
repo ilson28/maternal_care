@@ -9,7 +9,7 @@ class LoginSignup extends StatefulWidget {
 }
 
 class _LoginState extends State<LoginSignup> {
-  List<bool> isSelected = [true, false];
+  // List<bool> isSelected = [true, false];
   late int selectedIndex =
       widget.type == 'login' ? 0 : 1; // 0 = Log in, 1 = Sign up
   @override
@@ -114,9 +114,14 @@ class _LoginState extends State<LoginSignup> {
                     height: 15,
                   ),
                   if (widget.type == "login".toLowerCase())
-                    Text(
-                      "Forgot password?",
-                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, "/profile");
+                      },
+                      child: Text(
+                        "Forgot password?",
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
                     ),
                 ],
               ),

@@ -66,12 +66,17 @@ class Welcome extends StatelessWidget {
                           fontSize: 14,
                         ),
                       ),
-                      Text(
-                        "Log in",
-                        style: TextStyle(
-                          color: AppColors.primary,
-                          fontFamily: "Inder",
-                          fontSize: 14,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacementNamed(context, "/profile");
+                        },
+                        child: Text(
+                          "Log in",
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontFamily: "Inder",
+                            fontSize: 14,
+                          ),
                         ),
                       ),
                     ],
