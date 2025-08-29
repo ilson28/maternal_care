@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maternalcare/screens/userProgress.dart';
 import 'package:maternalcare/utils/appColors.dart';
+import 'package:maternalcare/widgets/alert.dart';
+import 'package:maternalcare/widgets/userProgressWithModal.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -40,6 +43,13 @@ class Menu extends StatelessWidget {
                       ),
                     ),
                     GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const UserProgressWithModal()),
+                        );
+                      },
                       child: Column(
                         children: [
                           Image.asset("assets/icons/alert.png"),
@@ -59,6 +69,9 @@ class Menu extends StatelessWidget {
                       ),
                     ),
                     GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/chat');
+                      },
                       child: Image.asset("assets/icons/robot.png"),
                     ),
                     GestureDetector(

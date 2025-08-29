@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maternalcare/screens/answer.dart';
 import 'package:maternalcare/screens/answer_saved.dart';
+import 'package:maternalcare/screens/chatScreen.dart';
 import 'package:maternalcare/screens/congratsScreen.dart';
 import 'package:maternalcare/screens/login.dart';
 import 'package:maternalcare/screens/profile.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         "/profile": (context) => const Profile(),
         "/user-progress": (context) => const UserProgress(),
         "/congrats": (context) => const CongratsScreen(),
+        "/chat": (context) => const ChatScreen(),
         "/library_videos": (context) => const VideosSection(),
         "/question_1": (context) => const Question_1(),
         "/question_2": (context) => const Question_2(),
