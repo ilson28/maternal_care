@@ -94,7 +94,10 @@ class Answer extends StatelessWidget {
                             SizedBox(
                               height: 44,
                               child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(
+                                      context, "/answer-saved");
+                                },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Color(0xffC4007C),
                                   shape: RoundedRectangleBorder(
@@ -124,7 +127,9 @@ class Answer extends StatelessWidget {
                 right: 22,
                 bottom: 22,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, "/question_5");
+                  },
                   child: const Text(
                     'volver',
                     style: TextStyle(

@@ -62,53 +62,58 @@ class UserProgress extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: Color(0xffFFD5E5),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column(
-                          children: [
-                            Text("Logintud",
-                                style: GoogleFonts.inder(
-                                    fontSize: 16, color: Color(0xff6D6D6D))),
-                            Text("15,6",
-                                style: GoogleFonts.inder(
-                                    fontSize: 24, color: Color(0xff404040))),
-                            Text("CM",
-                                style: GoogleFonts.inder(
-                                    fontSize: 24, color: Color(0xff404040))),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Peso",
-                                style: GoogleFonts.inder(
-                                    fontSize: 16, color: Color(0xff6D6D6D))),
-                            Text("145",
-                                style: GoogleFonts.inder(
-                                    fontSize: 24, color: Color(0xff404040))),
-                            Text("GRAMOS",
-                                style: GoogleFonts.inder(
-                                    fontSize: 24, color: Color(0xff404040))),
-                          ],
-                        ),
-                      ]),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-                    child: Text(
-                        "Lorem ipsum dolor sit amet consectetur  adipiscing elit, vel curae malesuada fringilla",
-                        style: GoogleFonts.inder(
-                            fontSize: 12, color: Color(0xff404040))),
-                  )
-                ],
+            GestureDetector(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/question_1');
+              },
+              child: Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: Color(0xffFFD5E5),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Column(
+                  children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children: [
+                              Text("Logintud",
+                                  style: GoogleFonts.inder(
+                                      fontSize: 16, color: Color(0xff6D6D6D))),
+                              Text("15,6",
+                                  style: GoogleFonts.inder(
+                                      fontSize: 24, color: Color(0xff404040))),
+                              Text("CM",
+                                  style: GoogleFonts.inder(
+                                      fontSize: 24, color: Color(0xff404040))),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Peso",
+                                  style: GoogleFonts.inder(
+                                      fontSize: 16, color: Color(0xff6D6D6D))),
+                              Text("145",
+                                  style: GoogleFonts.inder(
+                                      fontSize: 24, color: Color(0xff404040))),
+                              Text("GRAMOS",
+                                  style: GoogleFonts.inder(
+                                      fontSize: 24, color: Color(0xff404040))),
+                            ],
+                          ),
+                        ]),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 15),
+                      child: Text(
+                          "Lorem ipsum dolor sit amet consectetur  adipiscing elit, vel curae malesuada fringilla",
+                          style: GoogleFonts.inder(
+                              fontSize: 12, color: Color(0xff404040))),
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(

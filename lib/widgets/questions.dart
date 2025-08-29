@@ -5,8 +5,15 @@ import 'package:maternalcare/utils/appColors.dart';
 class Questions extends StatelessWidget {
   final String question;
   final bool emoji;
+  final String back;
+  final String next;
 
-  const Questions({super.key, required this.question, required this.emoji});
+  const Questions(
+      {super.key,
+      required this.question,
+      required this.emoji,
+      required this.back,
+      required this.next});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -72,23 +79,31 @@ class Questions extends StatelessWidget {
                   height: 20,
                 ),
                 emoji
-                    ? RichText(
-                        text: TextSpan(
-                          style: GoogleFonts.inder(
-                            fontSize: 30,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: "😊 😟 😐 😡",
+                    ? GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacementNamed(context, this.next);
+                        },
+                        child: RichText(
+                          text: TextSpan(
+                            style: GoogleFonts.inder(
+                              fontSize: 30,
                             ),
-                          ],
+                            children: [
+                              TextSpan(
+                                text: "😊 😟 😐 😡",
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, this.next);
+                              },
                               style: ButtonStyle(),
                               child: Text(
                                 "Si",
@@ -97,7 +112,10 @@ class Questions extends StatelessWidget {
                               )),
                           SizedBox(width: 20),
                           ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, this.next);
+                              },
                               child: Text("No",
                                   style: TextStyle(
                                       color: AppColors.primary, fontSize: 16))),
@@ -112,17 +130,22 @@ class Questions extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              RichText(
-                text: TextSpan(
-                  style: GoogleFonts.inder(
-                    color: AppColors.primary,
-                    fontSize: 16,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: "Volver",
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, this.back);
+                },
+                child: RichText(
+                  text: TextSpan(
+                    style: GoogleFonts.inder(
+                      color: AppColors.primary,
+                      fontSize: 16,
                     ),
-                  ],
+                    children: [
+                      TextSpan(
+                        text: "Volver",
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

@@ -9,7 +9,9 @@ class Question_1 extends StatelessWidget {
         child: Scaffold(
       body: Questions(
           question: "Como consideras que es tu estado de animo actual?",
-          emoji: true),
+          emoji: true,
+          next: "/question_2",
+          back: "/user-progress"),
     ));
   }
 }

@@ -14,9 +14,11 @@ import 'package:maternalcare/screens/userProgress.dart';
 import 'package:maternalcare/screens/videosSection.dart';
 
 import 'package:maternalcare/screens/welcome.dart';
+import 'package:maternalcare/widgets/alert.dart';
 import 'package:maternalcare/widgets/login_signup.dart';
 import 'package:maternalcare/widgets/menu.dart';
 import 'package:maternalcare/widgets/questions.dart';
+import 'package:maternalcare/widgets/terms_dialog.dart';
 import 'package:maternalcare/widgets/whiteBox.dart';
 
 class MyApp extends StatelessWidget {
@@ -38,10 +40,12 @@ class MyApp extends StatelessWidget {
       // Definimos rutas
       initialRoute: "/",
       routes: {
-        // "/": (context) => const Welcome(),
-        "/": (context) => const AnswerSaved(),
+        "/": (context) => const Welcome(),
+        // "/": (context) => const TermsDialog(),
+        "/modal_alert": (context) => AnomaliaModal(),
+        "/answer-saved": (context) => const AnswerSaved(),
         "/answer": (context) => const Answer(),
-        "/libray": (context) => const WhiteBox(),
+        "/library": (context) => const WhiteBox(),
         "/login": (context) => const Login(),
         "/signup": (context) => const Signup(),
         "/profile": (context) => const Profile(),

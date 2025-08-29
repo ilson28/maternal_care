@@ -47,23 +47,33 @@ class AnswerSaved extends StatelessWidget {
           SizedBox(
             height: 100,
           ),
-          Text(
-            "Ver mi progreso",
-            style: GoogleFonts.inder(
-                fontSize: 20,
-                color: AppColors.primary,
-                fontWeight: FontWeight.w400),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, "/user-progress");
+            },
+            child: Text(
+              "Ver mi progreso",
+              style: GoogleFonts.inder(
+                  fontSize: 20,
+                  color: AppColors.primary,
+                  fontWeight: FontWeight.w400),
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 50),
-                child: Text(
-                  "Volver",
-                  style: GoogleFonts.inder(
-                    color: AppColors.primary,
-                    fontSize: 16,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, "/answer");
+                  },
+                  child: Text(
+                    "Volver",
+                    style: GoogleFonts.inder(
+                      color: AppColors.primary,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ),

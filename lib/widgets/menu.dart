@@ -27,27 +27,51 @@ class Menu extends StatelessWidget {
                     GestureDetector(
                       child: Image.asset("assets/icons/img_profile.png"),
                     ),
-                    Text(
-                      "Perfil",
-                      style: GoogleFonts.inder(
-                        color: AppColors.primary,
-                        fontSize: 18,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/profile');
+                      },
+                      child: Text(
+                        "Perfil",
+                        style: GoogleFonts.inder(
+                          color: AppColors.primary,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                     GestureDetector(
-                      child: Image.asset("assets/icons/alert.png"),
+                      child: Column(
+                        children: [
+                          Image.asset("assets/icons/alert.png"),
+                          Text("Alertas")
+                        ],
+                      ),
                     ),
                     GestureDetector(
-                      child: Image.asset("assets/icons/library.png"),
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/library');
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset("assets/icons/library.png"),
+                          Text("Biblioteca")
+                        ],
+                      ),
                     ),
                     GestureDetector(
                       child: Image.asset("assets/icons/robot.png"),
                     ),
-                    Text(
-                      "Ver mi progreso",
-                      style: GoogleFonts.inder(
-                        color: AppColors.primary,
-                        fontSize: 20,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(
+                            context, '/user-progress');
+                      },
+                      child: Text(
+                        "Ver mi progreso",
+                        style: GoogleFonts.inder(
+                          color: AppColors.primary,
+                          fontSize: 20,
+                        ),
                       ),
                     ),
                   ],

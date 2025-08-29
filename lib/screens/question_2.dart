@@ -9,7 +9,9 @@ class Question_2 extends StatelessWidget {
         child: Scaffold(
       body: Questions(
           question: "¿Has presentado náuseas, vómitos o mareos hoy?",
-          emoji: true),
+          emoji: false,
+          next: '/question_3',
+          back: "/question_1"),
     ));
   }
 }

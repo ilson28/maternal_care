@@ -157,11 +157,16 @@ class VideosSection extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 4),
-                    child: Text(
-                      "Volver",
-                      style: GoogleFonts.inder(
-                        color: AppColors.primary,
-                        fontSize: 16,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/library');
+                      },
+                      child: Text(
+                        "Volver",
+                        style: GoogleFonts.inder(
+                          color: AppColors.primary,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),

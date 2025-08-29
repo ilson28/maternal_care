@@ -8,8 +8,11 @@ class Question_5 extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       body: Questions(
-          question: "Como consideras que es tu estado de animo actual?",
-          emoji: true),
+        question: "Como consideras que es tu estado de animo actual?",
+        emoji: false,
+        next: "/answer",
+        back: "/question_4",
+      ),
     ));
   }
 }
