@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maternalcare/share_prefs/user_preferences.dart';
 import 'package:maternalcare/utils/appColors.dart';
 import 'package:maternalcare/widgets/menu.dart';
 
@@ -9,13 +10,44 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  // controladores para manejar el texto
+  final _usernameController = TextEditingController();
+  final _ageController = TextEditingController();
+  final _weeksController = TextEditingController();
+
+  final prefs = UserPreference(); // tu singleton
+
+  @override
+  void initState() {
+    super.initState();
+    // cargar datos guardados al abrir la pantalla
+    _usernameController.text = prefs.username;
+    _ageController.text = prefs.age.toString();
+    _weeksController.text = prefs.weeksGestation.toString();
+  }
+
+  void _saveChanges() {
+    // guardar lo que el usuario escribió
+    prefs.username = _usernameController.text;
+    prefs.age = int.tryParse(_ageController.text) ?? 0;
+    prefs.weeksGestation = int.tryParse(_weeksController.text) ?? 0;
+
+    // opcional: feedback visual
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Datos guardados")),
+    );
+
+    // navegar
+    // Navigator.pushReplacementNamed(context, '/user-progress');
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         drawer: Menu(),
         appBar: AppBar(
-          backgroundColor: Color(0xffF8C9C9),
+          backgroundColor: const Color(0xffF8C9C9),
         ),
         body: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -23,15 +55,15 @@ class _ProfileState extends State<Profile> {
           decoration: AppColors.backgroundApp,
           child: Column(children: [
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 18,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Container(
                 width: double.infinity,
-                padding: EdgeInsets.symmetric(vertical: 23, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 23, horizontal: 20),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: AppColors.secondary),
+                  borderRadius: BorderRadius.circular(30),
+                  color: AppColors.secondary,
+                ),
                 child: Column(
                   children: [
                     Text(
@@ -41,107 +73,98 @@ class _ProfileState extends State<Profile> {
                         fontSize: 22,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
                       height: 80,
                       width: 80,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset("assets/icons/add_img.png"),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 10, top: 50, bottom: 7),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Nombre",
-                            style: GoogleFonts.inder(
-                              color: Colors.white,
-                              fontSize: 14,
-                            ),
-                          ),
-                        ],
+                    const SizedBox(height: 30),
+
+                    // Nombre
+                    _buildLabel("Nombre"),
+                    TextField(
+                      controller: _usernameController,
+                      decoration: _inputDecoration().copyWith(
+                        hintText: "Ingresa tu nombre",
                       ),
                     ),
+
+                    const SizedBox(height: 30),
+
+                    // Edad
+                    _buildLabel("Edad"),
                     TextField(
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30))),
+                      controller: _ageController,
+                      keyboardType: TextInputType.number,
+                      decoration: _inputDecoration(),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 10, top: 30, bottom: 7),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Edad",
-                            style: GoogleFonts.inder(
-                              color: Colors.white,
-                              fontSize: 14,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+
+                    const SizedBox(height: 30),
+
+                    // Semanas de gestación
+                    _buildLabel("Semanas de gestación"),
                     TextField(
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30))),
+                      controller: _weeksController,
+                      keyboardType: TextInputType.number,
+                      decoration: _inputDecoration(),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 10, top: 30, bottom: 7),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Semanas  de gestación",
-                            style: GoogleFonts.inder(
-                              color: Colors.white,
-                              fontSize: 14,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30))),
-                    ),
-                    SizedBox(height: 30),
+
+                    const SizedBox(height: 30),
+
                     ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushReplacementNamed(
-                              context, '/user-progress');
-                        },
-                        style: ButtonStyle(
-                            padding: WidgetStatePropertyAll(
-                                EdgeInsets.symmetric(
-                                    vertical: 17, horizontal: 20)),
-                            backgroundColor:
-                                WidgetStatePropertyAll(AppColors.primary)),
-                        child: Text(
-                          "Guardar Cambios",
-                          style: TextStyle(color: Colors.white),
-                        )),
+                      onPressed: _saveChanges,
+                      style: ButtonStyle(
+                        padding: WidgetStatePropertyAll(
+                          EdgeInsets.symmetric(vertical: 17, horizontal: 20),
+                        ),
+                        backgroundColor:
+                            WidgetStatePropertyAll(AppColors.primary),
+                      ),
+                      child: const Text(
+                        "Guardar Cambios",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ],
                 ),
               ),
             ),
           ]),
         ),
+      ),
+    );
+  }
+
+  // widgets helper para no repetir código
+  Widget _buildLabel(String text) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, bottom: 7),
+      child: Row(
+        children: [
+          Text(
+            text,
+            style: GoogleFonts.inder(
+              color: Colors.white,
+              fontSize: 14,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  InputDecoration _inputDecoration() {
+    return InputDecoration(
+      filled: true,
+      fillColor: Colors.white,
+      border: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(30),
       ),
     );
   }
