@@ -15,7 +15,7 @@ class _ProfileState extends State<Profile> {
   final _ageController = TextEditingController();
   final _weeksController = TextEditingController();
 
-  final prefs = UserPreference(); // tu singleton
+  final prefs = UserPreference(); // singleton
 
   @override
   void initState() {

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "471778366619",
+    "project_id": "maternal-care-b12a5",
+    "storage_bucket": "maternal-care-b12a5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471778366619:android:7ad5ee60bd0dffb632223e",
+        "android_client_info": {
+          "package_name": "com.example.maternalcare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANas8k2OTXFEEWvXRD3jDCekTbb19o_UI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

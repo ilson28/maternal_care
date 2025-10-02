@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maternalcare/auth/Auth_Services.dart';
 import 'package:maternalcare/screens/userProgress.dart';
 import 'package:maternalcare/utils/appColors.dart';
 import 'package:maternalcare/widgets/alert.dart';
 import 'package:maternalcare/widgets/userProgressWithModal.dart';
 
 class Menu extends StatelessWidget {
-  const Menu({super.key});
+  final AuthService _authService = AuthService();
+  Menu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -87,6 +90,14 @@ class Menu extends StatelessWidget {
                         ),
                       ),
                     ),
+                    GestureDetector(
+                      onTap: () async {
+                        await _authService.signOut();
+                        // Redirigir al login después de cerrar sesión
+                        Navigator.pushReplacementNamed(context, "/login");
+                      },
+                      child: Image.asset("assets/icons/exit.png"),
+                    )
                   ],
                 ),
               ),

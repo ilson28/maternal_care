@@ -1,17 +1,60 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:maternalcare/auth/Auth_Services.dart';
 import 'package:maternalcare/utils/appColors.dart';
 
 class LoginSignup extends StatefulWidget {
-  final String type;
+  final String type; // "login" o "create"
   const LoginSignup({super.key, required this.type});
+
+  @override
   _LoginState createState() => _LoginState();
 }
 
 class _LoginState extends State<LoginSignup> {
-  // List<bool> isSelected = [true, false];
   late int selectedIndex =
       widget.type == 'login' ? 0 : 1; // 0 = Log in, 1 = Sign up
+
+  final AuthService _authService = AuthService();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  bool _isLoading = false;
+
+  Future<void> _handleAuth() async {
+    setState(() => _isLoading = true);
+
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
+
+    try {
+      if (widget.type == "login") {
+        final user = await _authService.signIn(email, password);
+        if (user != null) {
+          Navigator.pushReplacementNamed(context, "/profile");
+        } else {
+          _showError("Error al iniciar sesión");
+        }
+      } else {
+        final user = await _authService.register(email, password);
+        if (user != null) {
+          Navigator.pushReplacementNamed(context, "/profile");
+        } else {
+          _showError("Error al registrarse");
+        }
+      }
+    } catch (e) {
+      _showError("Error: $e");
+    }
+
+    setState(() => _isLoading = false);
+  }
+
+  void _showError(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,6 +73,7 @@ class _LoginState extends State<LoginSignup> {
                   borderRadius: BorderRadius.circular(28)),
               child: Column(
                 children: [
+                  // 🔹 Botones arriba
                   Container(
                     decoration: BoxDecoration(
                       color: Color(0xffD9D9D9),
@@ -39,26 +83,23 @@ class _LoginState extends State<LoginSignup> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         AuthButton(
-                            text: "Log in",
-                            isActive: selectedIndex == 0,
-                            onTap: () {
-                              Navigator.pushReplacementNamed(context, '/login');
-                              // setState(() => selectedIndex = 1),
-                            }),
+                          text: "Log in",
+                          isActive: selectedIndex == 0,
+                          onTap: () {
+                            Navigator.pushReplacementNamed(context, '/login');
+                          },
+                        ),
                         AuthButton(
-                            text: "Sign up",
-                            isActive: selectedIndex == 1,
-                            onTap: () {
-                              Navigator.pushReplacementNamed(
-                                  context, '/signup');
-                              // setState(() => selectedIndex = 1),
-                            }),
+                          text: "Sign up",
+                          isActive: selectedIndex == 1,
+                          onTap: () {
+                            Navigator.pushReplacementNamed(context, '/signup');
+                          },
+                        ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 15,
-                  ),
+                  SizedBox(height: 15),
                   Text(
                     "¡Bienvenida al Cuidado Materno!",
                     style: TextStyle(
@@ -67,14 +108,16 @@ class _LoginState extends State<LoginSignup> {
                       fontSize: 15,
                     ),
                   ),
-                  SizedBox(
-                    height: 28,
-                  ),
+                  SizedBox(height: 28),
+
+                  // 🔹 Email
                   TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                       labelText: "E-mail",
                       enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
                       labelStyle: TextStyle(
                         color: Colors.white,
                         fontFamily: "Inclusive Sans",
@@ -82,11 +125,16 @@ class _LoginState extends State<LoginSignup> {
                       ),
                     ),
                   ),
+
+                  // 🔹 Password
                   TextField(
+                    controller: _passwordController,
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Password",
                       enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
                       labelStyle: TextStyle(
                         color: Colors.white,
                         fontFamily: "Inclusive Sans",
@@ -94,29 +142,33 @@ class _LoginState extends State<LoginSignup> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 28,
-                  ),
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacementNamed(context, "/profile");
-                      },
-                      style: ButtonStyle(
-                          backgroundColor:
-                              WidgetStatePropertyAll(Color(0xaaC4007C))),
-                      child: Text(
-                        widget.type == "login".toLowerCase()
-                            ? "Log in"
-                            : "Create",
-                        style: TextStyle(color: Colors.white),
-                      )),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  if (widget.type == "login".toLowerCase())
+
+                  SizedBox(height: 28),
+
+                  // 🔹 Botón principal
+                  _isLoading
+                      ? CircularProgressIndicator(color: Colors.white)
+                      : ElevatedButton(
+                          onPressed: _handleAuth,
+                          style: ButtonStyle(
+                            backgroundColor: WidgetStatePropertyAll(
+                              Color(0xaaC4007C),
+                            ),
+                          ),
+                          child: Text(
+                            widget.type == "login" ? "Log in" : "Create",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+
+                  SizedBox(height: 15),
+
+                  // 🔹 Forgot password solo en login
+                  if (widget.type == "login")
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushReplacementNamed(context, "/profile");
+                        // aquí puedes implementar reset password
+                        _showError("Funcionalidad en desarrollo");
                       },
                       child: Text(
                         "Forgot password?",
