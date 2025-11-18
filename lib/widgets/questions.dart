@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maternalcare/share_prefs/user_preferences.dart';
 import 'package:maternalcare/utils/appColors.dart';
 
 class Questions extends StatelessWidget {
@@ -16,6 +17,8 @@ class Questions extends StatelessWidget {
       required this.next});
   @override
   Widget build(BuildContext context) {
+    final prefs = UserPreference(); // singleton
+
     return Container(
       padding: EdgeInsets.only(left: 30, right: 30, top: 50),
       decoration: AppColors.backgroundApp,
@@ -36,7 +39,7 @@ class Questions extends StatelessWidget {
                       ),
                       children: [
                         TextSpan(
-                          text: "Username",
+                          text: prefs.username,
                           style: GoogleFonts.inder(
                             color: AppColors.primary,
                             fontSize: 14,

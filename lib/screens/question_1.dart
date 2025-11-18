@@ -8,7 +8,7 @@ class Question_1 extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       body: Questions(
-          question: "Como consideras que es tu estado de animo actual?",
+          question: "¿Como consideras que es tu estado de animo actual?",
           emoji: true,
           next: "/question_2",
           back: "/user-progress"),

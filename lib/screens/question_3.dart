@@ -8,7 +8,7 @@ class Question_3 extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       body: Questions(
-        question: "¿Has presentado náuseas, vómitos o mareos hoy?",
+        question: "¿Te sientes acompañada en este proceso?",
         emoji: false,
         next: '/question_4',
         back: "/question_2",

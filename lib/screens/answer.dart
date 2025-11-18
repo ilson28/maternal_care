@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:maternalcare/share_prefs/user_preferences.dart';
 import 'package:maternalcare/utils/appColors.dart';
 
 class Answer extends StatelessWidget {
-  const Answer({super.key});
+  Answer({super.key});
 
+  final prefs = UserPreference(); // singleton
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +40,7 @@ class Answer extends StatelessWidget {
                           borderRadius: BorderRadius.circular(22),
                         ),
                         child: RichText(
-                          text: const TextSpan(
+                          text: TextSpan(
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
@@ -46,7 +48,7 @@ class Answer extends StatelessWidget {
                             ),
                             children: [
                               TextSpan(
-                                text: 'Username',
+                                text: prefs.username,
                                 style: TextStyle(
                                   color: AppColors.primary, // rosado fuerte
                                   fontWeight: FontWeight.w700,

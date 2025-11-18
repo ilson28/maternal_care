@@ -11,6 +11,7 @@ class VideosSection extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          padding: EdgeInsets.all(32),
           decoration: AppColors.backgroundApp,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +63,7 @@ class VideosSection extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: const Text(
@@ -80,34 +81,34 @@ class VideosSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   BlogCard(
-                    title: 'Blog title',
+                    title: 'Cambios en tu cuerpo',
                     description:
-                        'Lorem ipsum  dolor sit amet \net delectus \naccommoda',
+                        'Tu cuerpo vive\ntransformaciones únicas\ndurante el embarazo',
                     onReadMore: () {
                       print('Click en Blog 1');
                     },
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 3),
                   BlogCard(
-                    title: 'Blog title',
+                    title: 'Alimentación ',
                     description:
-                        'Lorem ipsum  dolor sit amet \net delectus \naccommoda',
+                        'Come mejor para ti\ny tu bebé cada día\nsin restricciones duras',
                     onReadMore: () {
                       print('Click en Blog 2');
                     },
                   ),
                   const SizedBox(width: 10),
                   BlogCard(
-                    title: 'Blog title',
+                    title: 'Descanso y energía',
                     description:
-                        'Lorem ipsum  dolor sit amet \net delectus \naccommoda',
+                        'Dormir bien te ayuda\na mantener calma\ny cuidar tu salud',
                     onReadMore: () {
                       print('Click en Blog 3');
                     },
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 3),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: const Text(
@@ -118,14 +119,14 @@ class VideosSection extends StatelessWidget {
                       color: AppColors.primary),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 3),
               Container(height: 1, color: Colors.white),
-              const SizedBox(height: 10),
+              const SizedBox(height: 3),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   BlogCard(
-                    title: ' title',
+                    title: 'vida sana',
                     description:
                         'Lorem ipsum  dolor sit amet \net delectus \naccommoda',
                     onReadMore: () {
@@ -134,7 +135,7 @@ class VideosSection extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   BlogCard(
-                    title: 'title',
+                    title: 'confianza',
                     description:
                         'Lorem ipsum  dolor sit amet \net delectus \naccommoda',
                     onReadMore: () {
@@ -143,11 +144,11 @@ class VideosSection extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   BlogCard(
-                    title: 'title',
+                    title: ' diario',
                     description:
-                        'Lorem ipsum  dolor sit amet \net delectus \naccommoda',
+                        'Pequeños gestos\ndurante el día\nmejoran tu bienestar',
                     onReadMore: () {
-                      print('Click en Blog 3');
+                      print('Click en Artículo 1');
                     },
                   ),
                 ],

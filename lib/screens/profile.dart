@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:maternalcare/share_prefs/user_preferences.dart';
 import 'package:maternalcare/utils/appColors.dart';
 import 'package:maternalcare/widgets/menu.dart';
+import 'package:maternalcare/services/firebase_user_service.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -14,6 +15,8 @@ class _ProfileState extends State<Profile> {
   final _usernameController = TextEditingController();
   final _ageController = TextEditingController();
   final _weeksController = TextEditingController();
+  final _pesoController = TextEditingController();
+  final _alturaController = TextEditingController();
 
   final prefs = UserPreference(); // singleton
 
@@ -26,19 +29,30 @@ class _ProfileState extends State<Profile> {
     _weeksController.text = prefs.weeksGestation.toString();
   }
 
-  void _saveChanges() {
+  void _saveChanges() async {
     // guardar lo que el usuario escribió
     prefs.username = _usernameController.text;
     prefs.age = int.tryParse(_ageController.text) ?? 0;
     prefs.weeksGestation = int.tryParse(_weeksController.text) ?? 0;
 
-    // opcional: feedback visual
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Datos guardados")),
-    );
+    //  Guardar también en Firebase
+    final firebaseService = FirebaseUserService();
 
-    // navegar
-    // Navigator.pushReplacementNamed(context, '/user-progress');
+    try {
+      await firebaseService.saveUserData(
+        username: prefs.username,
+        age: prefs.age,
+        weeksGestation: prefs.weeksGestation,
+      );
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Datos guardados en Firestore ")),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Error al guardar: $e")),
+      );
+    }
   }
 
   @override
@@ -67,7 +81,9 @@ class _ProfileState extends State<Profile> {
                 child: Column(
                   children: [
                     Text(
-                      "Mi Perfil",
+                      prefs.username != ''
+                          ? 'Bienvenida ${prefs.username} '
+                          : " Mi perfil ",
                       style: GoogleFonts.inder(
                         color: AppColors.primary,
                         fontSize: 22,

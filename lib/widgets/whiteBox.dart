@@ -10,6 +10,7 @@ class WhiteBox extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
           decoration: AppColors.backgroundApp,
           child: Column(
             children: [
@@ -29,7 +30,7 @@ class WhiteBox extends StatelessWidget {
                 },
                 child: Container(
                   margin: const EdgeInsets.all(16),
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(22),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
