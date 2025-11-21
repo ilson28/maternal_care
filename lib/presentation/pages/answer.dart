@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maternalcare/share_prefs/user_preferences.dart';
-import 'package:maternalcare/utils/appColors.dart';
+import 'package:maternalcare/core/preferences/user_preferences.dart';
+import 'package:maternalcare/core/theme/appColors.dart';
 
 class Answer extends StatelessWidget {
   Answer({super.key});
@@ -78,17 +78,11 @@ class Answer extends StatelessWidget {
                               width: double.infinity,
                               padding: const EdgeInsets.all(20),
                               color: Colors.white,
-                              child: const Text(
-                                'Lorem ipsum dolor sit amet,\n'
-                                'consectetur adipiscing elit.\n'
-                                '  Sed ut perspiciatis unde omnis\n'
-                                'ste natus error sit voluptatem\n'
-                                'accusantium d\n'
-                                'oloremque laudantium.',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 18,
-                                  height: 1.3,
+                              child: const TextField(
+                                maxLines: 6,
+                                decoration: InputDecoration.collapsed(
+                                  hintText:
+                                      'Escribe aquí los signos alarmantes...',
                                 ),
                               ),
                             ),

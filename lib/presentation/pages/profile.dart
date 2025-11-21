@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:maternalcare/share_prefs/user_preferences.dart';
-import 'package:maternalcare/utils/appColors.dart';
-import 'package:maternalcare/widgets/menu.dart';
-import 'package:maternalcare/services/firebase_user_service.dart';
+import 'package:maternalcare/core/di/app_di.dart';
+import 'package:maternalcare/core/preferences/user_preferences.dart';
+import 'package:maternalcare/core/theme/appColors.dart';
+import 'package:maternalcare/presentation/widgets/menu.dart';
+import 'package:maternalcare/core/di/app_di.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -28,26 +29,37 @@ class _ProfileState extends State<Profile> {
     _usernameController.text = prefs.username;
     _ageController.text = prefs.age.toString();
     _weeksController.text = prefs.weeksGestation.toString();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    if (prefs.username.isEmpty) return;
+
+    final data = await AppDI.userController.getUser(prefs.username);
+
+    if (data != null) {
+      setState(() {
+        _usernameController.text = data["username"] ?? "";
+        _ageController.text = data["age"]?.toString() ?? "";
+        _weeksController.text = data["weeksGestation"]?.toString() ?? "";
+      });
+    }
   }
 
   void _saveChanges() async {
-    // guardar lo que el usuario escribió
     prefs.username = _usernameController.text;
     prefs.age = int.tryParse(_ageController.text) ?? 0;
     prefs.weeksGestation = int.tryParse(_weeksController.text) ?? 0;
 
-    //  Guardar también en Firebase
-    final firebaseService = FirebaseUserService();
-
     try {
-      await firebaseService.saveUserData(
+      await AppDI.userController.saveUser(
         username: prefs.username,
         age: prefs.age,
         weeksGestation: prefs.weeksGestation,
       );
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Datos guardados en Firestore ")),
+        const SnackBar(content: Text("Datos guardados correctamente")),
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(

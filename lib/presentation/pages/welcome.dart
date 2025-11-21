@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maternalcare/utils/appColors.dart';
+import 'package:maternalcare/core/theme/appColors.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});

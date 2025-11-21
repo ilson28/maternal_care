@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:maternalcare/utils/appColors.dart';
-import 'package:maternalcare/share_prefs/user_preferences.dart';
-import 'package:maternalcare/utils/fetal_data.dart';
-import 'package:maternalcare/widgets/menu.dart';
+import 'package:maternalcare/core/preferences/user_preferences.dart';
+import 'package:maternalcare/core/theme/appColors.dart';
+import 'package:maternalcare/core/constants/fetal_data.dart';
+import 'package:maternalcare/presentation/widgets/menu.dart';
 
 class UserProgress extends StatelessWidget {
   const UserProgress({super.key});

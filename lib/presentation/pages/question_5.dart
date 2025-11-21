@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maternalcare/widgets/questions.dart';
+import 'package:maternalcare/presentation/widgets/questions.dart';
+
 
 class Question_5 extends StatelessWidget {
   const Question_5({super.key});

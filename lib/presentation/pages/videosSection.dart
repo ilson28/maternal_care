@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:maternalcare/utils/appColors.dart';
-import 'package:maternalcare/widgets/blogCard.dart';
+import 'package:maternalcare/core/theme/appColors.dart';
+import 'package:maternalcare/presentation/widgets/blogCard.dart';
 
 class VideosSection extends StatelessWidget {
   const VideosSection({super.key});
@@ -11,7 +11,7 @@ class VideosSection extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          padding: const EdgeInsets.all(32),
+          padding: const EdgeInsets.all(20),
           decoration: AppColors.backgroundApp,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,7 +128,7 @@ class VideosSection extends StatelessWidget {
                   BlogCard(
                     title: 'vida sana',
                     description:
-                        'Lorem ipsum  dolor sit amet \net delectus \naccommoda',
+                        'Pequeños hábitos diarios te ayudan a sentirte mejor y mantener tu bienestar.',
                     onReadMore: () {
                       print('Click en Blog 1');
                     },
@@ -137,7 +137,7 @@ class VideosSection extends StatelessWidget {
                   BlogCard(
                     title: 'confianza',
                     description:
-                        'Lorem ipsum  dolor sit amet \net delectus \naccommoda',
+                        'Cuidarte y escuchar tu cuerpo fortalece tu seguridad en esta etapa.',
                     onReadMore: () {
                       print('Click en Blog 2');
                     },

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maternalcare/auth/Auth_Services.dart';
-import 'package:maternalcare/screens/userProgress.dart';
-import 'package:maternalcare/utils/appColors.dart';
-import 'package:maternalcare/widgets/alert.dart';
-import 'package:maternalcare/widgets/userProgressWithModal.dart';
+
+import 'package:maternalcare/core/theme/appColors.dart';
+import 'package:maternalcare/presentation/widgets/userProgressWithModal.dart';
 
 class Menu extends StatelessWidget {
   final AuthService _authService = AuthService();

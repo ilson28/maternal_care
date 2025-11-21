@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:maternalcare/utils/appColors.dart';
+
+import 'package:maternalcare/core/theme/appColors.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maternalcare/widgets/login_signup.dart';
+import 'package:maternalcare/presentation/widgets/login_signup.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});

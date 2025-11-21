@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:maternalcare/auth/Auth_Services.dart';
-import 'package:maternalcare/utils/appColors.dart';
+import 'package:maternalcare/data/datasources/Auth_Services.dart';
+import 'package:maternalcare/core/theme/appColors.dart';
+
 
 class LoginSignup extends StatefulWidget {
   final String type; // "login" o "create"
   const LoginSignup({super.key, required this.type});
-
   @override
   _LoginState createState() => _LoginState();
 }
@@ -29,14 +29,18 @@ class _LoginState extends State<LoginSignup> {
     try {
       if (widget.type == "login") {
         final user = await _authService.signIn(email, password);
+
         if (user != null) {
+          // Cuando el login es exitoso, te redirige al perfil
           Navigator.pushReplacementNamed(context, "/profile");
         } else {
           _showError("Error al iniciar sesión");
         }
       } else {
         final user = await _authService.register(email, password);
+
         if (user != null) {
+          // Después del registro, también va a completar perfil
           Navigator.pushReplacementNamed(context, "/profile");
         } else {
           _showError("Error al registrarse");

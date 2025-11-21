@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:maternalcare/screens/userProgress.dart';
-import 'package:maternalcare/widgets/alert.dart';
+
+import 'package:maternalcare/presentation/pages/userProgress.dart';
+import 'package:maternalcare/presentation/widgets/alert.dart';
 
 class UserProgressWithModal extends StatelessWidget {
   const UserProgressWithModal({super.key});

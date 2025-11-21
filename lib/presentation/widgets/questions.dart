@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:maternalcare/share_prefs/user_preferences.dart';
-import 'package:maternalcare/utils/appColors.dart';
+
+import 'package:maternalcare/core/preferences/user_preferences.dart';
+import 'package:maternalcare/core/theme/appColors.dart';
 
 class Questions extends StatelessWidget {
   final String question;
