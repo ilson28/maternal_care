@@ -5,7 +5,7 @@ class Login extends StatelessWidget {
   const Login({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
         child: Scaffold(
       body: LoginSignup(type: "login"),
     ));

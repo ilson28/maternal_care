@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class AnomaliaModal extends StatelessWidget {
+  const AnomaliaModal({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: Colors.transparent,
       child: Container(
         width: 300,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black26,
               blurRadius: 8,
@@ -29,8 +31,8 @@ class AnomaliaModal extends StatelessWidget {
                 child: Icon(Icons.close, color: Colors.grey[700]),
               ),
             ),
-            SizedBox(height: 8),
-            Row(
+            const SizedBox(height: 8),
+            const Row(
               children: [
                 Icon(Icons.error_outline, color: Colors.orange, size: 28),
                 SizedBox(width: 8),

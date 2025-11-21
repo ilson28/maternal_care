@@ -7,6 +7,7 @@ import 'package:maternalcare/services/firebase_user_service.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
+  @override
   _ProfileState createState() => _ProfileState();
 }
 
@@ -134,7 +135,7 @@ class _ProfileState extends State<Profile> {
 
                     ElevatedButton(
                       onPressed: _saveChanges,
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                         padding: WidgetStatePropertyAll(
                           EdgeInsets.symmetric(vertical: 17, horizontal: 20),
                         ),

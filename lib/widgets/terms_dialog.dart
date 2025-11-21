@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
 class TermsDialog extends StatelessWidget {
-  const TermsDialog({Key? key}) : super(key: key);
+  const TermsDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: Colors.transparent, // Fondo transparente del dialog
-      insetPadding: EdgeInsets.all(20), // margen respecto a los bordes
+      insetPadding: const EdgeInsets.all(20), // margen respecto a los bordes
       child: Container(
         width: MediaQuery.of(context).size.width * 0.85,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             // Título
-            Text(
+            const Text(
               'Términos y condiciones',
               style: TextStyle(
                 fontSize: 18,
@@ -28,10 +28,10 @@ class TermsDialog extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
 
             // Contenido de términos y condiciones
-            Container(
+            SizedBox(
               height: 150,
               child: SingleChildScrollView(
                 child: Text(
@@ -52,7 +52,7 @@ ullamco laboris''',
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Botones de acción
             Row(
@@ -67,9 +67,9 @@ ullamco laboris''',
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25),
                       ),
-                      padding: EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Devolver',
                       style: TextStyle(
                         color: Colors.white,
@@ -79,7 +79,7 @@ ullamco laboris''',
                     ),
                   ),
                 ),
-                SizedBox(width: 15),
+                const SizedBox(width: 15),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
@@ -90,9 +90,9 @@ ullamco laboris''',
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25),
                       ),
-                      padding: EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Aceptar',
                       style: TextStyle(
                         color: Colors.white,

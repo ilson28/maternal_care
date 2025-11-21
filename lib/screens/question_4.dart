@@ -5,7 +5,7 @@ class Question_4 extends StatelessWidget {
   const Question_4({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
         child: Scaffold(
       body: Questions(
         question: "¿Has realizado algún tipo de actividad ligera o ejercicio?",

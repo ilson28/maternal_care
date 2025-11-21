@@ -11,5 +11,5 @@ void main() async {
   );
   final prefs = UserPreference();
   await prefs.initPrefs();
-  runApp(MyApp());
+  runApp(const MyApp());
 }

@@ -65,7 +65,7 @@ class _LoginState extends State<LoginSignup> {
         child: Column(children: [
           Image.asset("assets/images/women.png", width: 150),
           Transform.translate(
-            offset: Offset(0, -30),
+            offset: const Offset(0, -30),
             child: Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -76,7 +76,7 @@ class _LoginState extends State<LoginSignup> {
                   // 🔹 Botones arriba
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xffD9D9D9),
+                      color: const Color(0xffD9D9D9),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
@@ -99,8 +99,8 @@ class _LoginState extends State<LoginSignup> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 15),
-                  Text(
+                  const SizedBox(height: 15),
+                  const Text(
                     "¡Bienvenida al Cuidado Materno!",
                     style: TextStyle(
                       color: AppColors.primary,
@@ -108,12 +108,12 @@ class _LoginState extends State<LoginSignup> {
                       fontSize: 15,
                     ),
                   ),
-                  SizedBox(height: 28),
+                  const SizedBox(height: 28),
 
                   // 🔹 Email
                   TextField(
                     controller: _emailController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: "E-mail",
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
@@ -130,7 +130,7 @@ class _LoginState extends State<LoginSignup> {
                   TextField(
                     controller: _passwordController,
                     obscureText: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: "Password",
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
@@ -143,25 +143,25 @@ class _LoginState extends State<LoginSignup> {
                     ),
                   ),
 
-                  SizedBox(height: 28),
+                  const SizedBox(height: 28),
 
                   // 🔹 Botón principal
                   _isLoading
-                      ? CircularProgressIndicator(color: Colors.white)
+                      ? const CircularProgressIndicator(color: Colors.white)
                       : ElevatedButton(
                           onPressed: _handleAuth,
-                          style: ButtonStyle(
+                          style: const ButtonStyle(
                             backgroundColor: WidgetStatePropertyAll(
                               Color(0xaaC4007C),
                             ),
                           ),
                           child: Text(
                             widget.type == "login" ? "Log in" : "Create",
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                         ),
 
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
 
                   // 🔹 Forgot password solo en login
                   if (widget.type == "login")
@@ -170,7 +170,7 @@ class _LoginState extends State<LoginSignup> {
                         // aquí puedes implementar reset password
                         _showError("Funcionalidad en desarrollo");
                       },
-                      child: Text(
+                      child: const Text(
                         "Forgot password?",
                         style: TextStyle(color: Colors.white, fontSize: 14),
                       ),
@@ -192,6 +192,7 @@ class AuthButton extends StatelessWidget {
   final VoidCallback onTap;
 
   const AuthButton({
+    super.key,
     required this.text,
     required this.isActive,
     required this.onTap,
@@ -202,13 +203,13 @@ class AuthButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         decoration: BoxDecoration(
-          color: isActive ? AppColors.primary : Color(0xffD9D9D9),
+          color: isActive ? AppColors.primary : const Color(0xffD9D9D9),
           borderRadius: BorderRadius.circular(20),
           boxShadow: isActive
               ? [
-                  BoxShadow(
+                  const BoxShadow(
                     color: Colors.black26,
                     blurRadius: 4,
                     offset: Offset(0, 2),
@@ -218,7 +219,7 @@ class AuthButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
       ),
     );

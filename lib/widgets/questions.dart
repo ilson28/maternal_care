@@ -20,12 +20,12 @@ class Questions extends StatelessWidget {
     final prefs = UserPreference(); // singleton
 
     return Container(
-      padding: EdgeInsets.only(left: 30, right: 30, top: 50),
+      padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
       decoration: AppColors.backgroundApp,
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(18),
+            padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10), color: Colors.white),
             child: Row(
@@ -34,7 +34,7 @@ class Questions extends StatelessWidget {
                   child: RichText(
                     text: TextSpan(
                       style: GoogleFonts.inder(
-                        color: Color(0xff404040),
+                        color: const Color(0xff404040),
                         fontSize: 14,
                       ),
                       children: [
@@ -45,7 +45,7 @@ class Questions extends StatelessWidget {
                             fontSize: 14,
                           ),
                         ),
-                        TextSpan(
+                        const TextSpan(
                           text:
                               " Responde las siguientes preguntas para llevar un seguimiento controlado de tu embarazo.",
                         ),
@@ -56,12 +56,12 @@ class Questions extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 70),
+          const SizedBox(height: 70),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 30),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Color(0xffFFA2DD)),
+                color: const Color(0xffFFA2DD)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -78,20 +78,20 @@ class Questions extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 emoji
                     ? GestureDetector(
                         onTap: () {
-                          Navigator.pushReplacementNamed(context, this.next);
+                          Navigator.pushReplacementNamed(context, next);
                         },
                         child: RichText(
                           text: TextSpan(
                             style: GoogleFonts.inder(
                               fontSize: 30,
                             ),
-                            children: [
+                            children: const [
                               TextSpan(
                                 text: "😊 😟 😐 😡",
                               ),
@@ -104,22 +104,20 @@ class Questions extends StatelessWidget {
                         children: [
                           ElevatedButton(
                               onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, this.next);
+                                Navigator.pushReplacementNamed(context, next);
                               },
-                              style: ButtonStyle(),
-                              child: Text(
+                              style: const ButtonStyle(),
+                              child: const Text(
                                 "Si",
                                 style: TextStyle(
                                     color: AppColors.primary, fontSize: 16),
                               )),
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
                           ElevatedButton(
                               onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, this.next);
+                                Navigator.pushReplacementNamed(context, next);
                               },
-                              child: Text("No",
+                              child: const Text("No",
                                   style: TextStyle(
                                       color: AppColors.primary, fontSize: 16))),
                         ],
@@ -127,7 +125,7 @@ class Questions extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 250,
           ),
           Row(
@@ -135,7 +133,7 @@ class Questions extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, this.back);
+                  Navigator.pushReplacementNamed(context, back);
                 },
                 child: RichText(
                   text: TextSpan(
@@ -143,7 +141,7 @@ class Questions extends StatelessWidget {
                       color: AppColors.primary,
                       fontSize: 16,
                     ),
-                    children: [
+                    children: const [
                       TextSpan(
                         text: "Volver",
                       ),

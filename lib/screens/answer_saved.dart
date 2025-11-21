@@ -9,7 +9,7 @@ class AnswerSaved extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 50),
         decoration: AppColors.backgroundApp,
         child: Column(children: [
           Center(
@@ -25,7 +25,8 @@ class AnswerSaved extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 25, bottom: 12, left: 30, right: 30),
+            padding:
+                const EdgeInsets.only(top: 25, bottom: 12, left: 30, right: 30),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: Colors.white,
@@ -34,8 +35,8 @@ class AnswerSaved extends StatelessWidget {
               children: [
                 Text(
                   "Gracias por responder tu control diario . Ya puedes ver el estado actual de tu embarazo y seguir de cerca el crecimiento de tu bebé ",
-                  style:
-                      GoogleFonts.inder(fontSize: 15, color: Color(0xff6E6E6E)),
+                  style: GoogleFonts.inder(
+                      fontSize: 15, color: const Color(0xff6E6E6E)),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -44,7 +45,7 @@ class AnswerSaved extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 100,
           ),
           GestureDetector(

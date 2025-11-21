@@ -3,7 +3,7 @@ import 'package:maternalcare/screens/userProgress.dart';
 import 'package:maternalcare/widgets/alert.dart';
 
 class UserProgressWithModal extends StatelessWidget {
-  const UserProgressWithModal({Key? key}) : super(key: key);
+  const UserProgressWithModal({super.key});
 
   @override
   Widget build(BuildContext context) {

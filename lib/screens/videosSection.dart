@@ -11,14 +11,14 @@ class VideosSection extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          padding: EdgeInsets.all(32),
+          padding: const EdgeInsets.all(32),
           decoration: AppColors.backgroundApp,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+              const Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text("Biblioteca",
                       style: TextStyle(
                           color: AppColors.primary,
@@ -26,9 +26,9 @@ class VideosSection extends StatelessWidget {
                           fontSize: 26)),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: const Text(
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Text(
                   'Videos',
                   style: TextStyle(
                       fontSize: 16,
@@ -64,9 +64,9 @@ class VideosSection extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: const Text(
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Text(
                   'blogs',
                   style: TextStyle(
                       fontSize: 16,
@@ -109,9 +109,9 @@ class VideosSection extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 3),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: const Text(
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Text(
                   'Articulos',
                   style: TextStyle(
                       fontSize: 16,

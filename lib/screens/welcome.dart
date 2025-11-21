@@ -15,7 +15,7 @@ class Welcome extends StatelessWidget {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "¡Bienvenida al Cuidado Materno!",
                     style: TextStyle(
                       color: AppColors.primary,
@@ -23,10 +23,10 @@ class Welcome extends StatelessWidget {
                       fontSize: 20,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 17,
                   ),
-                  Text(
+                  const Text(
                     "Tu compañero en el embarazo y posparto",
                     style: TextStyle(
                       color: Color(0xff555555),
@@ -34,7 +34,7 @@ class Welcome extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 11,
                   ),
                   Image.asset(
@@ -47,10 +47,10 @@ class Welcome extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushReplacementNamed(context, '/login');
                         },
-                        style: ButtonStyle(
+                        style: const ButtonStyle(
                             backgroundColor:
                                 WidgetStatePropertyAll(AppColors.primary)),
-                        child: Text(
+                        child: const Text(
                           "Log in",
                           style: TextStyle(color: Colors.white),
                         )),
@@ -58,7 +58,7 @@ class Welcome extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Don’t have an account? ",
                         style: TextStyle(
                           color: Color(0x66000000),
@@ -70,7 +70,7 @@ class Welcome extends StatelessWidget {
                         onTap: () {
                           Navigator.pushReplacementNamed(context, "/profile");
                         },
-                        child: Text(
+                        child: const Text(
                           "Log in",
                           style: TextStyle(
                             color: AppColors.primary,

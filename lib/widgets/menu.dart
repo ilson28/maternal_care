@@ -56,7 +56,7 @@ class Menu extends StatelessWidget {
                       child: Column(
                         children: [
                           Image.asset("assets/icons/alert.png"),
-                          Text("Alertas")
+                          const Text("Alertas")
                         ],
                       ),
                     ),
@@ -67,7 +67,7 @@ class Menu extends StatelessWidget {
                       child: Column(
                         children: [
                           Image.asset("assets/icons/library.png"),
-                          Text("Biblioteca")
+                          const Text("Biblioteca")
                         ],
                       ),
                     ),

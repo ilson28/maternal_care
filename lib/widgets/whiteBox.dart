@@ -10,13 +10,13 @@ class WhiteBox extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           decoration: AppColors.backgroundApp,
           child: Column(
             children: [
-              Center(
+              const Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 18),
+                  padding: EdgeInsets.only(top: 18),
                   child: Text("Biblioteca",
                       style: TextStyle(
                           color: AppColors.primary,
@@ -69,10 +69,10 @@ class WhiteBox extends StatelessWidget {
                           Image.asset("assets/images/doctor.png",
                               width: 28, height: 28),
                           const SizedBox(width: 8),
-                          Expanded(
+                          const Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text("1. Guía básica de controles prenatales"),
                                 Text("¿Qué exámenes necesito?"),
                                 Text("Frecuencia de consultas médicas"),
@@ -93,10 +93,10 @@ class WhiteBox extends StatelessWidget {
                           Image.asset("assets/images/pan.png",
                               width: 28, height: 28),
                           const SizedBox(width: 8),
-                          Expanded(
+                          const Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                     "2. Alimentación saludable durante el embarazo"),
                                 Text("Nutrientes esenciales para ti y tu bebé"),
@@ -109,16 +109,16 @@ class WhiteBox extends StatelessWidget {
 
                       const SizedBox(height: 16),
                       ///////////////////////////////////////////////////////////////////////////
-                      Row(
+                      const Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(width: 8),
+                          SizedBox(width: 8),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 28),
+                              padding: EdgeInsets.only(left: 28),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
+                                children: [
                                   Text(
                                     "3. Actividad física segura para embarazadas",
                                   ),
@@ -139,10 +139,10 @@ class WhiteBox extends StatelessWidget {
                           Image.asset("assets/images/corazon.png",
                               width: 28, height: 28),
                           const SizedBox(width: 8),
-                          Expanded(
+                          const Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                   "4. Salud mental y emocional en el embarazo",
                                 ),

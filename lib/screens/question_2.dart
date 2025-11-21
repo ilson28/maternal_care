@@ -5,7 +5,7 @@ class Question_2 extends StatelessWidget {
   const Question_2({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
         child: Scaffold(
       body: Questions(
           question: "¿Has presentado náuseas, vómitos o mareos hoy?",

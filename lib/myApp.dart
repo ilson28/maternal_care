@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
         "/library": (context) => const WhiteBox(),
         "/login": (context) => const Login(),
         "/signup": (context) => const Signup(),
-        "/profile": (context) => Profile(),
+        "/profile": (context) => const Profile(),
         "/user-progress": (context) => const UserProgress(),
         "/congrats": (context) => const CongratsScreen(),
         "/chat": (context) => const ChatScreen(),

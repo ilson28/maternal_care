@@ -23,7 +23,7 @@ class UserProgress extends StatelessWidget {
       child: Scaffold(
         drawer: Menu(),
         body: Container(
-          padding: EdgeInsets.only(left: 17, right: 17, top: 28),
+          padding: const EdgeInsets.only(left: 17, right: 17, top: 28),
           width: double.infinity,
           decoration: AppColors.backgroundApp,
           child: Column(
@@ -31,7 +31,8 @@ class UserProgress extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("8 10 12 13 14 15 16", style: TextStyle(fontSize: 15)),
+                  const Text("8 10 12 13 14 15 16",
+                      style: TextStyle(fontSize: 15)),
                   Padding(
                     padding:
                         const EdgeInsets.only(right: 12, left: 12, bottom: 30),
@@ -43,30 +44,31 @@ class UserProgress extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text("18 19 20 21 22 23 24", style: TextStyle(fontSize: 15)),
+                  const Text("18 19 20 21 22 23 24",
+                      style: TextStyle(fontSize: 15)),
                 ],
               ),
               Image.asset("assets/images/aguacate.png"),
               Text(
                 "Tu bebé luce de este tamaño",
-                style:
-                    GoogleFonts.inder(fontSize: 18, color: Color(0xff676767)),
+                style: GoogleFonts.inder(
+                    fontSize: 18, color: const Color(0xff676767)),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 "Estado actual",
-                style:
-                    GoogleFonts.inder(fontSize: 18, color: Color(0xff676767)),
+                style: GoogleFonts.inder(
+                    fontSize: 18, color: const Color(0xff676767)),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               GestureDetector(
                 onTap: () {
                   Navigator.pushReplacementNamed(context, '/question_1');
                 },
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Color(0xffFFD5E5),
+                    color: const Color(0xffFFD5E5),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Column(
@@ -80,14 +82,14 @@ class UserProgress extends StatelessWidget {
                                 "Longitud",
                                 style: GoogleFonts.inder(
                                   fontSize: 16,
-                                  color: Color(0xff6D6D6D),
+                                  color: const Color(0xff6D6D6D),
                                 ),
                               ),
                               Text(
                                 formatLength(longitud),
                                 style: GoogleFonts.inder(
                                   fontSize: 24,
-                                  color: Color(0xff404040),
+                                  color: const Color(0xff404040),
                                 ),
                               ),
                             ],
@@ -99,14 +101,14 @@ class UserProgress extends StatelessWidget {
                                 "Peso",
                                 style: GoogleFonts.inder(
                                   fontSize: 16,
-                                  color: Color(0xff6D6D6D),
+                                  color: const Color(0xff6D6D6D),
                                 ),
                               ),
                               Text(
                                 formatWeight(peso),
                                 style: GoogleFonts.inder(
                                   fontSize: 24,
-                                  color: Color(0xff404040),
+                                  color: const Color(0xff404040),
                                 ),
                               ),
                             ],
@@ -122,7 +124,7 @@ class UserProgress extends StatelessWidget {
                           "Tu bebé sigue creciendo día a día. Cada cambio es una señal del hermoso proceso que está viviendo tu cuerpo.",
                           style: GoogleFonts.inder(
                             fontSize: 12,
-                            color: Color(0xff404040),
+                            color: const Color(0xff404040),
                           ),
                         ),
                       )
@@ -138,7 +140,7 @@ class UserProgress extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: EdgeInsetsGeometry.only(top: 20),
+                      padding: const EdgeInsetsGeometry.only(top: 20),
                       child: Text(
                         "Volver",
                         style: GoogleFonts.inder(

@@ -41,7 +41,7 @@ class Answer extends StatelessWidget {
                         ),
                         child: RichText(
                           text: TextSpan(
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
                               height: 1.35,
@@ -49,13 +49,13 @@ class Answer extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text: prefs.username,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: AppColors.primary, // rosado fuerte
                                   fontWeight: FontWeight.w700,
                                   decoration: TextDecoration.underline,
                                 ),
                               ),
-                              TextSpan(
+                              const TextSpan(
                                 text:
                                     ' por favor ingresa los signos desconocidos que pueden ser alarmantes, muy pronto un profesional se contactara contigo',
                               ),
@@ -101,7 +101,7 @@ class Answer extends StatelessWidget {
                                       context, "/answer-saved");
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xffC4007C),
+                                  backgroundColor: const Color(0xffC4007C),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(14),
                                   ),
